@@ -1,28 +1,74 @@
-import { assets, infoList, toolsData } from "../assets/assets";
 import Image from "next/image";
+import { motion } from "motion/react";
+
+import { assets, infoList, toolsData } from "../assets/assets";
+
 const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-ovo">Introduction</h4>
-      <h2 className="text-center text-5xl font-ovo">About me</h2>
-      <div className="flex w-full flex-col lg:flex-row items-ceenter gap-20 my-20">
-        <div className="w-64 sm:w-80 rounded-3xl">
+    <motion.div
+      id="about"
+      className="w-full px-[12%] py-10 scroll-mt-20"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+    >
+      <motion.h4
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center mb-2 text-lg font-ovo"
+      >
+        Introduction
+      </motion.h4>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-center text-5xl font-ovo"
+      >
+        About me
+      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="flex w-full flex-col lg:flex-row items-ceenter gap-20 my-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-64 sm:w-80 rounded-3xl"
+        >
           <Image
             src={assets.my_image}
             alt="user"
             className="w-full rounded-3xl"
           />
-        </div>
-        <div className="flex-1">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="flex-1"
+        >
           <p className="mb-10 max-w-2xl">
             I am enthusiastic frontend developer with a background in
             mechatronics. Throughout my career, i have had the privilege of
             collaborating with multiple teams to bring high performing web
             interfaces to life, contributing to their success and growth.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+          <motion.ul
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
+          >
             {infoList.map(({ icon, iconDark, title, description }, i) => (
-              <li
+              <motion.li
+                whileInView={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
                 key={i}
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white  dark:hover:bg-dark-hover/50"
               >
@@ -37,26 +83,36 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 <p className="text-gray-600 text-sm font-outfit dark:text-white/80">
                   {description}
                 </p>
-              </li>
+              </motion.li>
             ))}
-          </ul>
-          <h4 className="my-6 text-gray-700 font-ovo dark:text-white/80">
-            {" "}
+          </motion.ul>
+          <motion.h4
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="my-6 text-gray-700 font-ovo dark:text-white/80"
+          >
             Tools I use
-          </h4>
-          <ul className="flex items-center gap-3 sm:gap-5">
+          </motion.h4>
+          <motion.ul
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
+            className="flex items-center gap-3 sm:gap-5"
+          >
             {toolsData.map((tool, i) => (
-              <li
+              <motion.li
+                whileHover={{ scale: 1.1 }}
                 key={i}
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
               >
                 <Image src={tool} alt="tool" className="w-5 sm:w-7" />
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+          </motion.ul>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
