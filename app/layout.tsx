@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import NavBar from "./components/NavBar";
+import { ThemeProvider } from "./context/ThemeContext";
 
 export const storyScript = localFont({
   src: [
@@ -38,7 +40,10 @@ export default function RootLayout({
       <body
         className={`${storyScript.variable} ${outfit.className} ${ovo.className} antialiased leading-8 overflow-x dark:bg-dark-theme dark:text-white`}
       >
-        {children}
+      <ThemeProvider>
+          <NavBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

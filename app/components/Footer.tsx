@@ -11,7 +11,11 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </a>
 
         <div className="w-max flex items-center gap-2 mx-auto">
-          <Image src={isDarkMode ? assets.mail_icon_dark: assets.mail_icon} alt="" className="w-4" />
+          <Image
+            src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon}
+            alt=""
+            className="w-4"
+          />
           jesseaporah6@gmail.com
         </div>
       </div>
@@ -19,12 +23,12 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <p> &copy; 2025 Jesse Aporah. All rights reserved.</p>
         <ul className="flex items-center gap-6 justify-center mt-4 sm:mt-0">
           <li>
-            <a href="" target="_blank">
+            <a href="https://github.com/Jesse-Aporah" target="_blank">
               GitHub
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="https://linkedin.com/in/jesseaporah" target="_blank">
               LinkedIn
             </a>
           </li>

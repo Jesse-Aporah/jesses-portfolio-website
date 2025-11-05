@@ -1,19 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 import { assets } from "../assets/assets";
+import { useTheme } from "../context/ThemeContext";
 
-const Navbar = ({
-  isDarkMode,
-  setIsDarkMode,
-}: {
-  isDarkMode: boolean;
-  setIsDarkMode: Dispatch<SetStateAction<boolean>>;
-}) => {
+const Navbar = () => {
+  const { isDarkMode, setIsDarkMode } = useTheme();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const sideMenuRef = useRef<HTMLUListElement>(null);
+
   const openMenu = () => {
     if (sideMenuRef.current) {
       sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -39,6 +38,20 @@ const Navbar = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleNavClick = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-75%] dark:hidden">
@@ -61,29 +74,41 @@ const Navbar = ({
           } `}
         >
           <li>
-            <a href="#top" className="font-ovo">
+            <button onClick={() => handleNavClick("top")} className="font-ovo">
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#about" className="font-ovo">
+            <button
+              onClick={() => handleNavClick("about")}
+              className="font-ovo"
+            >
               About me
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#services" className="font-ovo">
+            <button
+              onClick={() => handleNavClick("services")}
+              className="font-ovo"
+            >
               Services
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#work" className="font-ovo">
-              My Work
-            </a>
+            <button
+              onClick={() => handleNavClick("works")}
+              className="font-ovo"
+            >
+              My works
+            </button>
           </li>
           <li>
-            <a href="#contact" className="font-ovo">
+            <button
+              onClick={() => handleNavClick("contact")}
+              className="font-ovo"
+            >
               Contact me
-            </a>
+            </button>
           </li>
         </ul>
         <div className="flex items-center gap-4">
@@ -129,33 +154,59 @@ const Navbar = ({
             />
           </button>
           <li>
-            <a href="#top" className="font-ovo" onClick={() => closeMenu()}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="font-ovo" onClick={() => closeMenu()}>
-              About me
-            </a>
-          </li>
-          <li>
-            <a
-              href="#services"
+            <button
+              onClick={() => {
+                handleNavClick("top");
+                closeMenu();
+              }}
               className="font-ovo"
-              onClick={() => closeMenu()}
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                handleNavClick("about");
+                closeMenu();
+              }}
+              className="font-ovo"
+            >
+              About me
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                handleNavClick("services");
+                closeMenu();
+              }}
+              className="font-ovo"
             >
               Services
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#work" className="font-ovo" onClick={() => closeMenu()}>
+            <button
+              onClick={() => {
+                handleNavClick("works");
+                closeMenu();
+              }}
+              className="font-ovo"
+            >
               My Work
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#contact" className="font-ovo" onClick={() => closeMenu()}>
-              Contact me
-            </a>
+            <button
+              onClick={() => {
+                handleNavClick("contact");
+                closeMenu();
+              }}
+              className="font-ovo"
+            >
+              Contact Me
+            </button>
           </li>
         </ul>
       </nav>

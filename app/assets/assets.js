@@ -35,6 +35,15 @@ import right_arrow from "./right-arrow.png";
 import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
+import typscriptIcon from "./typescript-icon.svg";
+import javascriptIcon from "./javascript-icon.png";
+import reactIcon from "./react.svg";
+import nextjsIcon from "./nextjs-icon.svg";
+import slugify from "../utils/slugify";
+import babsImage from "./babs-n-yusuf.png";
+import eldoradoImage from "./eldorado-finance.png";
+import naijapointers from "./naijapointers.png";
+import gamehub from "./game-hub.png";
 
 export const assets = {
   my_image,
@@ -74,57 +83,66 @@ export const assets = {
   send_icon,
   right_arrow_bold,
   right_arrow_bold_dark,
+  typscriptIcon,
+  javascriptIcon,
+  reactIcon,
+  nextjsIcon,
 };
 
 export const workData = [
   {
-    title: "Frontend project",
+    title: "Frontend projects",
     description: "Web Design",
-    bgImage: "/work-1.png",
+    bgImage: "/game-hub.png",
+    slug: "web-development",
   },
   {
-    title: "Geo based app",
+    title: "Secondhand store",
     description: "Mobile App",
-    bgImage: "/work-2.png",
+    bgImage: "/done-with-it.jpeg",
+    slug: "",
   },
   {
-    title: "Photography site",
+    title: "Blog site",
     description: "Web Design",
-    bgImage: "/work-3.png",
+    bgImage: "/naijapointers.png",
+    slug: "",
   },
   {
     title: "UI/UX designing",
     description: "UI/UX Design",
     bgImage: "/work-4.png",
+    slug: "",
   },
 ];
 
 export const serviceData = [
   {
     icon: assets.web_icon,
-    title: "Web design",
-    description: "Web development is the process of building, programming...",
-    link: "",
+    title: "Web development",
+    description: "The process of designing and programming web applications...",
+    slug: slugify("Web development"),
+  },
+  {
+    icon: "mail",
+    title: "Email development",
+    description:
+      "This involves creating responsive and engaging email templates...",
+    slug: slugify("Email development"),
   },
   {
     icon: assets.mobile_icon,
     title: "Mobile app",
     description:
       "Mobile app development involves creating software for mobile devices...",
-    link: "",
+    slug: slugify("Mobile app"),
   },
   {
     icon: assets.ui_icon,
     title: "UI/UX design",
     description:
       "UI/UX design focuses on creating a seamless user experience...",
-    link: "",
-  },
-  {
-    icon: assets.graphics_icon,
-    title: "Graphics design",
-    description: "Creative design solutions to enhance visual communication...",
-    link: "",
+    slug: slugify("UI/UX design"),
   },
 ];
 
@@ -155,4 +173,172 @@ export const toolsData = [
   assets.mongodb,
   assets.figma,
   assets.git,
+  assets.reactIcon,
+  assets.nextjsIcon,
+  assets.typscriptIcon,
+  assets.javascriptIcon,
 ];
+
+export const works = {
+  webDevelopment: {
+    works: [
+      {
+        title: "Babs & Yusuf Proserv",
+        description:
+          "I developed a corporate website for Babs & Yusuf Proserv, showcasing their services and portfolio using modern frameworks and best practices. The project improved the company’s online user engagement by nearly 10% and enhanced overall brand visibility. Worked with FastAPI backend developers to integrate dynamic content and ensure seamless performance across devices.",
+        webLink: "https://babs-n-yusuf-proser.com",
+        technologies: ["React", "TypeScript", "MUI", "Vercel"],
+        gitLink: "https://github.com/Jesse-Aporah/Babs-N-Yusuf-Proserv",
+        image: babsImage,
+      },
+      {
+        title: "Eldorado Finance",
+        description:
+          "Developed a responsive admin dashboard for a FinTech startup using React, TypeScript, and Material UI, integrating multiple REST APIs for real-time data visualization and admin control. Collaborated with Django backend engineers to optimize API consumption, reducing data fetch latency by ~25% and ensuring overall UI responsiveness.",
+        webLink: "",
+        technologies: ["React", "TypeScript", "MUI", "Postman"],
+        gitLink: "https://github.com/Jesse-Aporah/eldorado-finance",
+        image: eldoradoImage,
+      },
+      {
+        title: "NaijaPionters",
+        description:
+          "Built a dynamic blogging platform for NaijaPionters using CSS3 and JavaScript, Built with  a focus on UI/UX design principles to ensure an engaging user experience.",
+        webLink: "",
+        technologies: ["HTML5", "CSS3", "React", "Postman"],
+        gitLink: "https://github.com/Jesse-Aporah/NaijaPointers-.git",
+        image: naijapointers,
+      },
+      {
+        title: "GameHub",
+        description:
+          "Developed a gaming community website for GameHub using React & Chakra UI focusing on responsive design and interactive features to enhance user engagement.",
+        webLink: "",
+        technologies: ["React", "TypeScript", "Chakra UI", "React Query"],
+        gitLink: "https://github.com/Jesse-Aporah/game-hub",
+        image: gamehub,
+      },
+    ],
+  },
+  emailDevelopment: {
+    works: [
+      {
+        title: "Babs & Yusuf Proserv",
+        description:
+          "I developed a corporate website for Babs & Yusuf Proserv, showcasing their services and portfolio using modern frameworks and best practices. The project improved the company’s online user engagement by nearly 10% and enhanced overall brand visibility. Worked with FastAPI backend developers to integrate dynamic content and ensure seamless performance across devices.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Vercel"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "Eldorado Finance",
+        description:
+          "Developed a responsive admin dashboard for a FinTech startup using React, TypeScript, and Material UI, integrating multiple REST APIs for real-time data visualization and admin control. Collaborated with Django backend engineers to optimize API consumption, reducing data fetch latency by ~25% and ensuring overall UI responsiveness.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "NaijaPionters",
+        description:
+          "Built a dynamic blogging platform for NaijaPionters using CSS3 and JavaScript, Built with  a focus on UI/UX design principles to ensure an engaging user experience.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["HTML5", "CSS3", "React", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "GameHub",
+        description:
+          "Developed a gaming community website for GameHub using React & Chakra UI focusing on responsive design and interactive features to enhance user engagement.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "Chakra UI", "React Query"],
+        gitLink: "",
+        image: "",
+      },
+    ],
+  },
+  mobileApps: {
+    works: [
+      {
+        title: "Babs & Yusuf Proserv",
+        description:
+          "I developed a corporate website for Babs & Yusuf Proserv, showcasing their services and portfolio using modern frameworks and best practices. The project improved the company’s online user engagement by nearly 10% and enhanced overall brand visibility. Worked with FastAPI backend developers to integrate dynamic content and ensure seamless performance across devices.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Vercel"],
+        gitLink: "",
+        image: babsImage,
+        image: "",
+      },
+      {
+        title: "Eldorado Finance",
+        description:
+          "Developed a responsive admin dashboard for a FinTech startup using React, TypeScript, and Material UI, integrating multiple REST APIs for real-time data visualization and admin control. Collaborated with Django backend engineers to optimize API consumption, reducing data fetch latency by ~25% and ensuring overall UI responsiveness.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "NaijaPionters",
+        description:
+          "Built a dynamic blogging platform for NaijaPionters using CSS3 and JavaScript, Built with  a focus on UI/UX design principles to ensure an engaging user experience.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["HTML5", "CSS3", "React", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "GameHub",
+        description:
+          "Developed a gaming community website for GameHub using React & Chakra UI focusing on responsive design and interactive features to enhance user engagement.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "Chakra UI", "React Query"],
+        gitLink: "",
+        image: "",
+      },
+    ],
+  },
+  uiUxDesign: {
+    works: [
+      {
+        title: "Babs & Yusuf Proserv",
+        description:
+          "I developed a corporate website for Babs & Yusuf Proserv, showcasing their services and portfolio using modern frameworks and best practices. The project improved the company’s online user engagement by nearly 10% and enhanced overall brand visibility. Worked with FastAPI backend developers to integrate dynamic content and ensure seamless performance across devices.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Vercel"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "Eldorado Finance",
+        description:
+          "Developed a responsive admin dashboard for a FinTech startup using React, TypeScript, and Material UI, integrating multiple REST APIs for real-time data visualization and admin control. Collaborated with Django backend engineers to optimize API consumption, reducing data fetch latency by ~25% and ensuring overall UI responsiveness.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "MUI", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "NaijaPionters",
+        description:
+          "Built a dynamic blogging platform for NaijaPionters using CSS3 and JavaScript, Built with  a focus on UI/UX design principles to ensure an engaging user experience.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["HTML5", "CSS3", "React", "Postman"],
+        gitLink: "",
+        image: "",
+      },
+      {
+        title: "GameHub",
+        description:
+          "Developed a gaming community website for GameHub using React & Chakra UI focusing on responsive design and interactive features to enhance user engagement.",
+        webLink: "https://babsandyusufproserv.com",
+        technologies: ["React", "TypeScript", "Chakra UI", "React Query"],
+        gitLink: "",
+        image: "",
+      },
+    ],
+  },
+};

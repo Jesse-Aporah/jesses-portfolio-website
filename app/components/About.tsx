@@ -53,10 +53,10 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
           className="flex-1"
         >
           <p className="mb-10 max-w-2xl">
-            I am enthusiastic frontend developer with a background in
-            mechatronics. Throughout my career, i have had the privilege of
-            collaborating with multiple teams to bring high performing web
-            interfaces to life, contributing to their success and growth.
+            As a frontend developer with a foundation in mechatronics, I’m
+            passionate about building fast, intuitive, and scalable web
+            experiences. I’ve had the opportunity to work with talented teams to
+            deliver interfaces that elevate performance and user satisfaction.
           </p>
           <motion.ul
             initial={{ opacity: 0 }}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { assets, workData } from "../assets/assets";
+import Link from "next/link";
 
 const Works = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
@@ -45,7 +46,7 @@ const Works = ({ isDarkMode }: { isDarkMode: boolean }) => {
         transition={{ duration: 0.9, delay: 0.6 }}
         className="grid grid-auto my-10 gap-8 dark:text-black"
       >
-        {workData.map(({ bgImage, title, description }, index) => (
+        {workData.map(({ bgImage, title, description, slug }, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -53,15 +54,21 @@ const Works = ({ isDarkMode }: { isDarkMode: boolean }) => {
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <div className="bg-white w-10/12 rounded-md p-3 absolute bottom-5 left-1/2 -translate-x-1/2  transition-translate flex justify-between items-center duration-500 group-hover:bottom-7">
-              <div>
-                <motion.h2 className="font-semibold">{title}</motion.h2>
-                <p className="text-sm text-gray-700">{description}</p>
+            <Link href={slug === "web-development" ? `/services/${slug}` : ""}>
+              <div className="bg-white w-10/12 rounded-md p-3 absolute bottom-5 left-1/2 -translate-x-1/2  transition-translate flex justify-between items-center duration-500 group-hover:bottom-7">
+                <div>
+                  <motion.h2 className="font-semibold">{title}</motion.h2>
+                  <p className="text-sm text-gray-700">{description}</p>
+                </div>
+                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transistion">
+                  <Image
+                    src={assets.send_icon}
+                    alt="send icon"
+                    className="w-5"
+                  />
+                </div>
               </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transistion">
-                <Image src={assets.send_icon} alt="send icon" className="w-5" />
-              </div>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </motion.div>

@@ -73,7 +73,7 @@ const Contact = () => {
         className="max-w-2xl mx-auto flex flex-col gap-6"
         onSubmit={onSubmit}
       >
-        <div className="grid grid-auto gap-4 mt-10 mb-4">
+        <div className="grid grid-auto gap-4 mt-10 mb-2">
           <motion.input
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -97,7 +97,7 @@ const Contact = () => {
         </div>
         <motion.textarea
           initial={{ y: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.6 }}
           rows={7}
           placeholder="Enter your message"
