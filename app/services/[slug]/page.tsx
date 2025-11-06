@@ -56,8 +56,8 @@ export default function ServiceDetails({
         if (currentIndex < serviceWorkImages.length - 1) {
           setCurrentIndex((prev) => prev + 1);
           scroll("right");
-          setClicked(false);
         }
+        setClicked(false);
       }, 500);
     }
   };
@@ -80,7 +80,6 @@ export default function ServiceDetails({
 
   if (!service) {
     return (
-      
       <div className="px-[12%] py-20 text-center">
         <h2 className="text-3xl font-semibold">Service not found</h2>
         <Link
