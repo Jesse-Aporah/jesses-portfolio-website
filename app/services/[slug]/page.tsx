@@ -69,8 +69,8 @@ export default function ServiceDetails({
         if (currentIndex > 0) {
           setCurrentIndex((prev) => prev - 1);
           scroll("left");
-          setClicked(false);
         }
+        setClicked(false);
       }, 500);
     }
   };
