@@ -57,19 +57,14 @@ const Services = ({ isDarkMode }: { isDarkMode: boolean }) => {
             key={index}
             className="border p-6 rounded-lg shadow-sm hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 dark:hover:bg-dark-hover dark:hover:shadow-white"
           >
-            {icon === "mail" ? (
-              <Icon
-                icon={<Mail className="w-6 h-6 text-white" strokeWidth={2} />}
-              />
-            ) : (
-              <Image src={icon} alt="" className="w-12 mb-4" />
-            )}
+            <Image src={icon} alt="" className="w-12 mb-4" />
+
             <h3 className="text-2xl text-gray-700 dark:text-white">{title}</h3>
             <p className="text-sm text-gray-600 leading-5 dark:text-white/80">
               {description}
             </p>
             <Link
-              href={slug === "web-development"? `/services/${slug }`: ''}
+              href={slug === "web-development" ? `/services/${slug}` : ""}
               className="flex items-center gap-2 text-sm mt-4"
             >
               Read more

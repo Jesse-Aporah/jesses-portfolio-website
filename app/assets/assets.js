@@ -95,7 +95,7 @@ export const assets = {
 export const workData = [
   {
     title: "Frontend projects",
-    description: "Web Design",
+    description: "Web Development",
     bgImage: "/game-hub.png",
     slug: "web-development",
   },
@@ -106,9 +106,9 @@ export const workData = [
     slug: "",
   },
   {
-    title: "Blog site",
-    description: "Web Design",
-    bgImage: "/naijapointers.png",
+    title: "Event booking site",
+    description: "Web Development",
+    bgImage: "/evento.png",
     slug: "",
   },
   {
@@ -126,13 +126,7 @@ export const serviceData = [
     description: "The process of designing and programming web applications...",
     slug: slugify("Web development"),
   },
-  {
-    icon: "mail",
-    title: "Email development",
-    description:
-      "This involves creating responsive and engaging email templates...",
-    slug: slugify("Email development"),
-  },
+
   {
     icon: assets.mobile_icon,
     title: "Mobile app",
@@ -206,7 +200,7 @@ export const works = {
           "Formik",
           "React Router",
           "Vite",
-          "Vercel"
+          "Vercel",
         ],
         gitLink: "https://github.com/Jesse-Aporah/evento",
         image: eventoImage,
