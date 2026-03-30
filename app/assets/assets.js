@@ -44,6 +44,8 @@ import babsImage from "./babs-n-yusuf.png";
 import eldoradoImage from "./eldorado-finance.png";
 import naijapointers from "./naijapointers.png";
 import gamehub from "./game-hub.png";
+import clipVault from "./clip-vault.png";
+import readByBarter from "./read-by-barter.png";
 
 export const assets = {
   my_image,
@@ -201,6 +203,25 @@ export const works = {
         image: eldoradoImage,
       },
       {
+        title: "ClipVault",
+        description:
+          "Developed ClipVault, an AI-powered clipboard manager that intelligently captures, organizes, and enhances copied content in real time. Implemented features such as automatic categorization, search, and AI-driven summarization to improve productivity and streamline workflows. Built using modern frontend technologies with a focus on performance, scalability, and clean UI/UX, enabling users to efficiently manage and reuse clipboard data across tasks.",
+        webLink: "",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        gitLink: "https://github.com/Jesse-Aporah/ClipVault",
+        image: clipVault,
+      },
+      {
+        title: "Read By Barter",
+        description:
+          "Developed ReadByBarter, a community-driven web platform that enables users to borrow, buy, sell, and donate books locally. Implemented user-friendly interfaces for browsing listings, managing transactions, and facilitating seamless interactions between users. Built with modern frontend technologies, focusing on responsive design, efficient state management, and intuitive UX to enhance accessibility and promote knowledge sharing within communities.",
+        webLink: "https://read-by-barter.vercel.app/",
+        technologies: ["HTML", "Tailwind", "React"],
+        gitLink: "https://github.com/Jesse-Aporah/ReadByBarter",
+        image: readByBarter,
+      },
+
+      {
         title: "NaijaPionters",
         description:
           "Built a dynamic blogging platform for NaijaPionters using CSS3 and JavaScript, Built with  a focus on UI/UX design principles to ensure an engaging user experience.",
@@ -240,6 +261,7 @@ export const works = {
         gitLink: "",
         image: "",
       },
+
       {
         title: "NaijaPionters",
         description:

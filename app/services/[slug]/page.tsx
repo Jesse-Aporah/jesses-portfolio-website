@@ -7,7 +7,6 @@ import { use, useRef, useState } from "react";
 
 type worksKey = keyof typeof works;
 
-// key helper
 const getKey = (slug: string): worksKey => {
   const [first, ...rest] = slug.split("-");
   return (first +
