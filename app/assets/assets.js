@@ -46,6 +46,7 @@ import naijapointers from "./naijapointers.png";
 import gamehub from "./game-hub.png";
 import clipVault from "./clip-vault.png";
 import readByBarter from "./read-by-barter.png";
+import eventoImage from "./evento.png";
 
 export const assets = {
   my_image,
@@ -189,9 +190,26 @@ export const works = {
         description:
           "I developed a corporate website for Babs & Yusuf Proserv, showcasing their services and portfolio using modern frameworks and best practices. The project improved the company’s online user engagement by nearly 10% and enhanced overall brand visibility. Worked with FastAPI backend developers to integrate dynamic content and ensure seamless performance across devices.",
         webLink: "https://babs-n-yusuf-proser.com",
-        technologies: ["React", "TypeScript", "MUI", "Vercel"],
+        technologies: ["React", "TypeScript", "MUI", "Postman"],
         gitLink: "https://github.com/Jesse-Aporah/Babs-N-Yusuf-Proserv",
         image: babsImage,
+      },
+      {
+        title: "Evento",
+        description:
+          "Developed a modern event booking platform that allows users to discover, browse, and RSVP for local events with ease. Implemented responsive, mobile-first UI components using React and TypeScript, ensuring fast load times and consistent user experience across devices. Collaborated on state management and routing for seamless navigation, while integrating Formik for form handling and Tailwind for styling. The project enhances local event visibility and improves user engagement through an intuitive interface.",
+        webLink: "https://evento-mu-two.vercel.app/",
+        technologies: [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Formik",
+          "React Router",
+          "Vite",
+          "Vercel"
+        ],
+        gitLink: "https://github.com/Jesse-Aporah/evento",
+        image: eventoImage,
       },
       {
         title: "Eldorado Finance",
