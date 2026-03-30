@@ -94,25 +94,36 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Frontend projects",
+    title: "Event booking site",
     description: "Web Development",
-    bgImage: "/game-hub.png",
-    slug: "web-development",
+    bgImage: "/evento.png",
+    link: "https://evento-mu-two.vercel.app/"
+  },
+  {
+    title: "Babs & Yusuf",
+    description: "Web Development",
+    bgImage: "babs-n-yusuf.png",
+    link: "https://babs-n-yusuf-proser.com/"
   },
   {
     title: "Secondhand store",
     description: "Mobile App",
     bgImage: "/done-with-it.jpeg",
-    slug: "",
   },
   {
-    title: "Event booking site",
+    title: "Game Discovery Site",
     description: "Web Development",
-    bgImage: "/evento.png",
-    slug: "",
+    bgImage: "/game-hub.png",
+    link: ""
   },
   {
-    title: "UI/UX designing",
+    title: "Read By Barter",
+    description: "Web Development",
+    bgImage: "/read-by-barter.png",
+    link: "https://read-by-barter.vercel.app/"
+  },
+  {
+    title: "Read By Barter",
     description: "UI/UX Design",
     bgImage: "/work-4.png",
     slug: "",

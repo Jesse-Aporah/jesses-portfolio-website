@@ -46,7 +46,7 @@ const Works = ({ isDarkMode }: { isDarkMode: boolean }) => {
         transition={{ duration: 0.9, delay: 0.6 }}
         className="grid grid-auto my-10 gap-8 dark:text-black"
       >
-        {workData.map(({ bgImage, title, description, slug }, index) => (
+        {workData.map(({ bgImage, title, description, slug, link }, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -54,7 +54,7 @@ const Works = ({ isDarkMode }: { isDarkMode: boolean }) => {
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <Link href={slug === "web-development" ? `/services/${slug}` : ""}>
+            <Link href={link || ""} target="blank">
               <div className="bg-white w-10/12 rounded-md p-3 absolute bottom-5 left-1/2 -translate-x-1/2  transition-translate flex justify-between items-center duration-500 group-hover:bottom-7">
                 <div>
                   <motion.h2 className="font-semibold">{title}</motion.h2>
